@@ -11,7 +11,7 @@
 (defun largestPalindromeProduct (digits)
   (setq
     n (expt 10 digits)
-    results (make-array (list n n) :initial-element 0) counter 0
+    counter 0
     mx 0
     my 0)
   (setq mmax 0 x (largestNDigitNumber digits) y x)
@@ -19,9 +19,8 @@
 	do (loop for j from y downto (smallestNDigitNumber digits)
 		 do (progn 
 		      (setq z (* i j))
-		      (if (and (> z mmax) (= (aref results i j) 0))
+		      (if (> z mmax) ;(and (> z mmax) (= (aref results i j) 0))
 			(progn
-			  (setf (aref results i j) z (aref results j i) z); mark the multiplication as complete
 			  (setq counter (1+ counter))
 			  (if (isPalindrome? z) (setq mmax z mx i my j)))))))
   (list (list "Maximum Palindrome:" (format nil "~D * ~D = ~D" mx my mmax)) (list "Palindrome checks performed:" counter)))
