@@ -1,7 +1,7 @@
 ; reports the largest palindrome for the product of two (n) digit numbers
 (defun largestPalindromeProduct (n)
   (setq
-    x (largestNDigitNumber n) y x; x and y are starting points: the largest "n" digit number
+    x (largestNDigitNumber n) y x; x and y are starting points: the largest (n) digit number
     mx 0 my 0 maxPal 0); the maximum palindrome (maxPal) and it's multiplier/multiplicand (mx, my)
   (loop for i from x downto (smallestNDigitNumber n)
 	do (loop for j from y downto (smallestNDigitNumber n)
