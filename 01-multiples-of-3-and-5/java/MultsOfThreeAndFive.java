@@ -9,12 +9,10 @@ public class MultsOfThreeAndFive {
 
 		// print out all the values
 
-		System.out.println("All multiples of 3 or 5 from 1 to 1000");
-		System.out.println();
+		System.out.println("All multiples of 3 or 5 from 1 to 1000\n");
 		int x = 0;
 		for (Integer i : mults) {
 			System.out.printf("%4d", i);
-
 			// and make them look nice
 			if (i != mults.get(mults.size() - 1)) System.out.print(", ");
 			if (x < 32) x++;
